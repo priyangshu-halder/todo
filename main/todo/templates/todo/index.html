@@ -1,0 +1,21 @@
+<h1>TODO</h1>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<div>
+    <ul>Id Task</ul>
+    {% for i in tasks %}
+    <ul>{{i.unique_id}}. {{i.task}}
+        <a href="{% url 'edit' i.unique_id %}">
+            <button type="submit">Edit ✎</button>
+        </a>
+        <a href="{% url 'delete' i.unique_id %}">
+            <button type="submit" method="delete">complete ✅</button>
+        </a>
+    </ul>
+    {% endfor %}
+</div>

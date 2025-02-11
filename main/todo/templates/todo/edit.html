@@ -1,0 +1,8 @@
+<h1>Edit</h1>
+<div>
+    <form method="POST" act>
+    {% csrf_token %}
+    {{form.task}}
+    <button type="submit">Update</button>
+    </form>
+</div>
