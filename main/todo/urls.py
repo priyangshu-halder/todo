@@ -3,5 +3,5 @@ from .views import index, edit, delete
 urlpatterns = [
     path('', index, name="index"),
     path('edit/<int:pk>/', edit, name="edit"),
-    #path('<int:pk>/', delete, name="delete"),
+    path('delete/<int:pk>/', delete, name="delete"),
 ]

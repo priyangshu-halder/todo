@@ -1,0 +1,9 @@
+<h1>Delete</h1>
+<div>
+    {{item.task}}
+    <form method="POST">
+    {% csrf_token %}
+    {{form.unique_id}} {{form.task}}
+    <button type="submit">Delete</button>
+    </form>
+</div>

@@ -3,9 +3,6 @@ from django.urls import reverse
 from .models import Task
 from .forms import TaskForm
 
-def delete(request, pk):
-    item=Task.objects.get(unique_id=pk)
-    item.delete()
 def index(request):
     if request.method == 'POST':
         form = TaskForm(request.POST)
@@ -15,9 +12,6 @@ def index(request):
     else:
         form = TaskForm()
 
-    if request.method=='delete':
-        d=delete()
-        return d
     tasks = Task.objects.all()
     context = {'tasks': tasks, 'form': form}
 
@@ -32,4 +26,8 @@ def edit(request, pk):
     return render(request, 'todo/edit.html', context)
 def delete(request, pk):
     item=Task.objects.get(unique_id=pk)
-    item.delete()
+    if request.method=='POST':
+        item.delete()
+        return redirect('index')
+    context={'item':item}
+    return render(request, 'todo/delete.html', context)
