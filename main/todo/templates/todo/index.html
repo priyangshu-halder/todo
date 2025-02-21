@@ -9,7 +9,10 @@
 <div>
     <ul>Id Task</ul>
     {% for i in tasks %}
-    <ul>{{i.unique_id}}. {{i.task}}
+    <ul>
+        <li>
+        {{i.task}}
+        </li>
         <a href="{% url 'edit' i.unique_id %}">
             <button type="submit">Edit ✎</button>
         </a>
