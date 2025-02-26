@@ -1,8 +1,9 @@
 <h1>Edit</h1>
 <div>
-    <form method="POST" act>
+    <form method="POST">
     {% csrf_token %}
-    {{form.task}}
+    <label for="task">Modify Task:</label>
+    <input type="text" name="task" placeholder="Edit your task">
     <button type="submit">Update</button>
     </form>
 </div>
