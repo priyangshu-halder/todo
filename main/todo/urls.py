@@ -4,5 +4,4 @@ urlpatterns = [
     path('', index, name="index"),
     path('edit/<int:pk>/', edit, name="edit"),
     path('delete/<int:pk>/', delete, name="delete"),
-    path('signup/', include("django.contrib.auth.urls")),
 ]
