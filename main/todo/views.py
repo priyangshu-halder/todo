@@ -1,22 +1,22 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import Task
-from .forms import TaskForm, CreateUserForm
+from .forms import TaskForm #, CreateUserForm
 
-def registerpage(request):
-    form=CreateUserForm()
-    if request.method=='POST':
-        form=CreateUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')
-    context={'form':form}
-    return render(request, 'todo/signup.html', context)
-
-def loginpage(request):
-
-    context={}
-    return render(request, 'todo/login.html', context)
+#def registerpage(request):
+#    form=CreateUserForm()
+#    if request.method=='POST':
+#        form=CreateUserForm(request.POST)
+#        if form.is_valid():
+#            form.save()
+#            return redirect('login')
+#    context={'form':form}
+#    return render(request, 'todo/signup.html', context)
+#
+#def loginpage(request):
+#
+#    context={}
+#    return render(request, 'todo/login.html', context)
 
 def index(request):
     if request.method == 'POST':
