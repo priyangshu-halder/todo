@@ -115,7 +115,7 @@
             {% for i in tasks %}
             <tr>
                 <td>{{ forloop.counter }}</td>
-                <td>{{ i.task }}</td>
+                <td>{{ i.name }}</td>
                 <td class="action-buttons">
                     <a href="{% url 'edit' i.unique_id %}"><button>Edit ✎</button></a>
                     <a href="{% url 'delete' i.unique_id %}"><button class="delete-btn">Complete ✅</button></a>

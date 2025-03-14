@@ -12,7 +12,7 @@ def index(request):
     else:
         form = TaskForm()
 
-    tasks = Task.objects.all()
+    tasks = .objects.all()
     context = {'tasks': tasks, 'form': form}
 
     return render(request, 'todo/index.html', context)
